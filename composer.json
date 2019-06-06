@@ -1,0 +1,19 @@
+{
+    "name": "osor1o/websocket-php",
+    "description": "",
+    "authors": [
+        {
+            "name": "Osorio Neto",
+            "email": "osor1o@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MyApp\\": "src"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "cboden/ratchet": "^0.4.1"
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center">Chat - WebSocket PHP</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <button type="button" id="send">Send</button>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <th>User</th>
+            <th>Message</th>
+        </thead>
+        <tbody id="messages"></tbody>
+    </table>
+    <script>
+    (_ => {
+        'use strict'
+
+        // const conn = new WebSocket('ws://localhost:8080')
+        // conn.onopen = function(e) {
+        //     console.log("Connection established!")
+        //     conn.send('Hello World!')
+        // };
+
+        // conn.onmessage = function(e) {
+        //     console.log(e.data)
+        // };
+
+        function addMessage (user, message) {
+            var tr = document.createElement('tr')
+            var td = new Array(2)
+            td[0] = document.createElement('td')
+            td[1] = document.createElement('td')
+            td[0].innerText = user
+            td[1].innerText = message
+            tr.appendChild(td[0])
+            tr.appendChild(td[1])
+            document.getElementById('messages').appendChild(tr)
+        }
+    })()
+    </script>
+</body>
+</html>
